@@ -82,11 +82,11 @@ Event-driven simulation showing configuration, election, failure, recovery, and 
 
 ### Authors
 - **Ishank Sharma:** Designed simulator core, implemented Raft election, and metric computation. Analyzed stabiliza-
-tion time, message complexity, and recovery efficiency—matching proposal’s algorithm and analysis goals.
+tion time, message complexity, and recovery efficiency.
 - **Sri Lalitha:** Developed evaluation and monitoring framework, automated timing/message tracking, and comparative
-testing—fulfilling her proposed role in system evaluation.
+testing.
 - **Prerana:** Implemented crash-recovery logic, integrated restart features, and authored documentation/literature syn-
-thesis connecting theory to results—aligned with proposal deliverables
+thesis connecting theory to results.
 
 
 
