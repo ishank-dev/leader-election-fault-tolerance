@@ -1,6 +1,0 @@
-num_nodes: 10
-latency_ms: 50
-leader_kill_time: 2.0
-optional_restart_time: 3.0
-enable_restart: true
-
