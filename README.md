@@ -35,3 +35,58 @@ Edit `config.yaml`:
 - **Bully**: Higher ID nodes dominate, O(n²) messages
 - **Ring**: Token passes in circle, O(n) messages
 - **Raft**: Randomized timeouts, majority voting
+
+##  Output
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fd9dd54c-8387-4941-bfd8-a9cbfe791e64" alt="CLI Output" width="600" />
+</p>
+
+---
+
+##  Working of Each Algorithm
+
+###  Bully Algorithm
+Higher ID nodes dominate — **O(n²)** message complexity.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/265b2d63-8f01-42ab-b59c-760f8d9baa62" alt="Bully Election Sequence" width="600" />
+</p>
+
+---
+
+###  Ring Algorithm
+Token passes in a circular manner — **O(n)** message complexity.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7e4ed839-f5f9-4173-bc8a-0ac1b73fdc9a" alt="Ring Election Phases" width="600" />
+</p>
+
+---
+
+###  Raft Algorithm
+Randomized timeouts with majority voting — **Balanced and resilient election performance.**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8c969675-798f-4eac-89e2-5a0ca5610958" alt="Raft Election FSM" width="600" />
+</p>
+
+---
+
+###  End-to-End Workflow
+Event-driven simulation showing configuration, election, failure, recovery, and re-election phases.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/61061790-1175-4d2a-bbc5-222364f6ee11" alt="End-to-End Leader Election Workflow" width="600" />
+</p>
+
+### Authors
+- **Ishank Sharma:** Designed simulator core, implemented Raft election, and metric computation. Analyzed stabiliza-
+tion time, message complexity, and recovery efficiency—matching proposal’s algorithm and analysis goals.
+- **Sri Lalitha:** Developed evaluation and monitoring framework, automated timing/message tracking, and comparative
+testing—fulfilling her proposed role in system evaluation.
+- **Prerana:** Implemented crash-recovery logic, integrated restart features, and authored documentation/literature syn-
+thesis connecting theory to results—aligned with proposal deliverables
+
+
+
