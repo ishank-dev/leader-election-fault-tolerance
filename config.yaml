@@ -1,6 +1,14 @@
 num_nodes: 10
 latency_ms: 50
+latency_jitter_ms: 10
+message_loss_prob: 0.05
 leader_kill_time: 2.0
 optional_restart_time: 3.0
 enable_restart: true
+enable_partition: true
+partition_start_time: 2.5
+partition_end_time: 4.0
+partition_groups:
+  - [0, 1, 2, 3, 4]
+  - [5, 6, 7, 8, 9]
 

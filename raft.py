@@ -85,19 +85,15 @@ class RaftNode(Node):
                 self.leader_id = msg.data["leader_id"]
                 self.voted_for = None
                 self.election_timeout = current_time + random.uniform(0.15, 0.3)
-                
+                        
+        return responses
+
+    def tick(self, current_time: float) -> List[Message]:
+        responses = []
         if self.state == NodeState.CANDIDATE and self.election_timeout:
             if current_time >= self.election_timeout:
-                self.start_election(current_time)
-                for i in range(self.total_nodes):
-                    if i != self.node_id:
-                        responses.append(Message(
-                            from_node=self.node_id,
-                            to_node=i,
-                            type="REQUEST_VOTE",
-                            data={"term": self.current_term, "candidate_id": self.node_id},
-                            timestamp=current_time
-                        ))
+                msgs = self.start_election(current_time)
+                responses.extend(msgs)
                         
         if self.state == NodeState.LEADER and self.heartbeat_timeout:
             if current_time >= self.heartbeat_timeout:
@@ -111,6 +107,5 @@ class RaftNode(Node):
                             data={"term": self.current_term, "leader_id": self.node_id},
                             timestamp=current_time
                         ))
-                        
         return responses
 
